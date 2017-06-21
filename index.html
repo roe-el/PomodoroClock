@@ -4,12 +4,68 @@
 <head>
     <title>Pomodoro Clock</title>
     <meta charset='utf-8'>
+    <!--Set width of page to follow screen width, set initial zoom level-->
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!--JQuery-->
     <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+    <!--Bootstrap JS-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+    <!--Full width container-->
+    <div class='container-fluid '>
+        <div class='well center-block text-center'>
+        	<div class='row'>
+                Time
+            </div>
+            <div class='row'>
+                <div class='col-sm-6'>
+                    <div class='row'>
+                        Break Timer
+                    </div>
+                    <div class='row center-block text-center'>
+                        <table style="width:100%">
+                            <tr>
+                                <td>
+                                    <button class='btn break-add'>+</button>
+                                </td>
+                                <td>
+                                    <div class='break-num'>Number</div>
+                                </td>
+                                <td>
+                                    <button class='btn break-sub'>-</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class='col-sm-6 session'>
+                    <div class='row'>
+                        Session Timer
+                    </div>
+                    <div class='row center-block text-center'>
+                        <table style="width:100%">
+                            <tr>
+                                <td>
+                                    <button class='btn session-add'>+</button>
+                                </td>
+                                <td>
+                                    <div class='session-num'>Number</div>
+                                </td>
+                                <td>
+                                    <button class='btn session-sub'>-</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
 </body>
 
 </html>
