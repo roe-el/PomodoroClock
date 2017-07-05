@@ -15,22 +15,24 @@
     <!--Bootstrap JS-->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Local JS-->
-    <script src='scripts/script.js'></script>   
+    <script src='scripts/script.js'></script>
     <!--Timer Library-->
-    <script src='scripts/timer.js'></script> 
+    <script src='scripts/timer.js'></script>
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 </head>
 
 <body>
     <!--Full width container-->
     <div class='container-fluid '>
-        <div class='well center-block text-center outline'>
-        	<div class='row'>
-                <span id='min-zero'>0</span><span id='min-time'>0</span>:<span id='zero'>0</span><span id='sec-time'>0</span>
+        <div class='well text-center outline'>
+            <div class='row'>
+                <span id='min-zero'>0</span><span id='min-time'>0</span><span id="colon">:</span><span id='zero'>0</span><span id='sec-time'>0</span>
             </div>
             <div class='row'>
                 <div class='col-sm-6'>
                     <div class='row red'>
-                        Break
+                        <span class='break-lbl'>Break</span>
                     </div>
                     <div class='row center-block text-center'>
                         <table>
@@ -50,7 +52,7 @@
                 </div>
                 <div class='col-sm-6 session'>
                     <div class='row blue'>
-                        Session
+                        <span class='session-lbl'>Session</span>
                     </div>
                     <div class='row center-block text-center'>
                         <table>
@@ -69,9 +71,9 @@
                     </div>
                 </div>
             </div>
-            <div class='row'>
-            	<button class='btn play-btn'>Play</button>
-            	<button class='btn reset-btn'>Reset</button>
+            <div class='row btns'>
+                <button class='btn play-btn'>Play</button>
+                <button class='btn reset-btn'>Reset</button>
             </div>
         </div>
     </div>
