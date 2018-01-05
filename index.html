@@ -18,6 +18,8 @@
     <script src='scripts/script.js'></script>
     <!--Timer Library-->
     <script src='scripts/timer.js'></script>
+    <!--Icon from http://bogdanrosu.com/ -->
+    <link rel='icon' type 'image/x-icon' href='timer.png' />
     <!--Font-->
     <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 </head>
@@ -28,56 +30,58 @@
         <div class='well text-center outline'>
             <div class="row">
                 Select a time and press Start. Press Start again to reset.
-            <div class='row'>
-                <span id='min-zero'>0</span><span id='min-time'>0</span><span id="colon">:</span><span id='zero'>0</span><span id='sec-time'>0</span>
-            </div>
-            <div class='row'>
-                <div class='col-sm-6'>
-                    <div class='row red'>
-                        <span class='break-lbl'>Break</span>
+                <div class='row'>
+                    <span id='min-zero'>0</span><span id='min-time'>0</span><span id="colon">:</span><span id='zero'>0</span><span id='sec-time'>0</span>
+                </div>
+                <div class='row'>
+                    <div class='col-sm-6'>
+                        <div class='row red'>
+                            <span class='break-lbl'>Break</span>
+                        </div>
+                        <div class='row center-block text-center'>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <button class='btn break-add red'>+</button>
+                                    </td>
+                                    <td>
+                                        <div class='break-num red'>5</div>
+                                    </td>
+                                    <td>
+                                        <button class='btn break-sub red'>-</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                    <div class='row center-block text-center'>
-                        <table>
-                            <tr>
-                                <td>
-                                    <button class='btn break-add red'>+</button>
-                                </td>
-                                <td>
-                                    <div class='break-num red'>5</div>
-                                </td>
-                                <td>
-                                    <button class='btn break-sub red'>-</button>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class='col-sm-6 session'>
+                        <div class='row blue'>
+                            <span class='session-lbl'>Session</span>
+                        </div>
+                        <div class='row center-block text-center'>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <button class='btn session-add blue'>+</button>
+                                    </td>
+                                    <td>
+                                        <div class='session-num blue'>25</div>
+                                    </td>
+                                    <td>
+                                        <button class='btn session-sub blue'>-</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <div class='col-sm-6 session'>
-                    <div class='row blue'>
-                        <span class='session-lbl'>Session</span>
-                    </div>
-                    <div class='row center-block text-center'>
-                        <table>
-                            <tr>
-                                <td>
-                                    <button class='btn session-add blue'>+</button>
-                                </td>
-                                <td>
-                                    <div class='session-num blue'>25</div>
-                                </td>
-                                <td>
-                                    <button class='btn session-sub blue'>-</button>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
+                <div class='row btns'>
+                    <button class='btn play-btn'>Start</button>
+                    <button class='btn stop-btn'>Stop</button>
+                    <button class='btn pause-btn'>Pause</button>
                 </div>
-            </div>
-            <div class='row btns'>
-                <button class='btn play-btn'>Start</button>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
