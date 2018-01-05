@@ -5,6 +5,7 @@ $(document).ready(function() {
     var sessionHistory = 0;
     var sessionTime = 0;
     var breakTime = breakCount * 60;
+    var paused = false;
     var ding = new Audio("ding.mp3");
     /*Break Add/Subtract button event listeners*/
     $('.break-add').on('click', function() {
@@ -32,13 +33,16 @@ $(document).ready(function() {
 
     /*Play button event listener*/
     $('.play-btn').on('click', function() {
-        sessionTimer.stop();
-        breakTimer.stop();
+        if (paused === true){
+            sessionTimer.start();
+            breakTimer.start();
+            paused = false;
+        }
+        else{
         breakHistory = breakCount;
-        sessionHistory = sessionCount;
-        sessionTime = sessionCount * 60;
-        breakTime = breakCount * 60;
-        console.log(sessionTime);
+            sessionHistory = sessionCount;
+            sessionTime = sessionCount * 60;
+            breakTime = breakCount * 60;
         //Change color of text when new timer is started.
         if ($('#min-zero,#min-time,#zero,#sec-time,#colon').hasClass('red')) {
             $('#min-zero,#min-time,#zero,#sec-time,#colon').removeClass('red');
@@ -54,16 +58,29 @@ $(document).ready(function() {
                 //Change text back to 00:00:00 at end of break session.
                 $('#min-zero,#min-time,#zero,#sec-time').text('0');
                 ding.play();
-                console.log('Done');
             });
         });
-    });
 
-    //Creates object for breakTimer with keys for different options
+    }
+
+    });
+    $('.stop-btn').on('click', function() {
+            sessionTimer.stop();
+            breakTimer.stop();
+            paused = false;
+             $('#min-zero,#min-time,#zero,#sec-time').text('0');
+        });
+    $('.pause-btn').on('click', function() {
+        if(sessionTimer.getStatus() !== "stopped" && breakTimer.getStatus() !== "stopped"){
+        sessionTimer.pause();
+        breakTimer.pause();
+        paused = true;
+    }
+    });
+        //Creates object for breakTimer with keys for different options
     var breakTimer = new Timer({
         tick: 1,
         ontick: function(sec) {
-            console.log('interval', sec);
             //Sets zero if minutes is under 10
             if ((Math.floor(sec / 60000)) < 10) {
                 $('#min-zero').text('0');
@@ -80,16 +97,14 @@ $(document).ready(function() {
             }
             //Seting seconds on the timer
             $('#sec-time').text(Math.round(sec / 1000) % 60);
-        },
-        onstart: function() {
-            console.log('timer started');
         }
+
+        
     });
     //Creates object for sessionTimer with keys for different options
     var sessionTimer = new Timer({
         tick: 1,
         ontick: function(sec) {
-            console.log('interval', sec);
             //Sets zero if minutes is under 10
             if ((Math.floor(sec / 60000)) < 10) {
                 $('#min-zero').text('0');
@@ -106,9 +121,6 @@ $(document).ready(function() {
             }
             //Seting seconds on the timer
             $('#sec-time').text(Math.round(sec / 1000) % 60);
-        },
-        onstart: function() {
-            console.log('timer started');
         }
     });
 });
